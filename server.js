@@ -7,6 +7,7 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.json());
 //if click send for signup---it will keep sending error as app server doesn't know what type of data server is receiving, so use middleware express.json.Thus it will parse all data i9nto json format.earlier we used to use bodyparser but now express will do it
+connectDatabase();
 
 dotenv.config({ path: '.env' });
 
@@ -17,8 +18,6 @@ const blogs = require('./routes/blogRoutes');
 app.use('/api/user', user);
 
 app.use('/api/blog', blogs);
-
-connectDatabase();
 
 // app.use('/api', (req, res, next) => {
 // res.send('Hello World');
