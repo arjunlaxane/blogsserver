@@ -24,7 +24,7 @@ connectDatabase();
 // res.send('Hello World');
 // });
 
-const port = 5002;
+const port = process.env.PORT || 5002;
 
 app.listen(port, () => {
   console.log(`Server connected with port: ${port}`);
