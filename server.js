@@ -19,9 +19,9 @@ app.use('/api/user', user);
 
 app.use('/api/blog', blogs);
 
-// app.use('/api', (req, res, next) => {
-// res.send('Hello World');
-// });
+app.use('/', (req, res, next) => {
+  res.send('Hello World');
+});
 
 const port = process.env.PORT || 5002;
 
